@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import ToDoForms from './components/ToDoForms'
 import './App.css'
+import ToDoList from './components/ToDoList'
 
 function App() {
 
-  const [ToDo, setToDo] = useState(() => {
+  const [toDo, setToDo] = useState(() => {
 
     // Verifica o valor armazenado no localStorage sob a chave "ITEMS".
     const localValue = localStorage.getItem("ITEMS")
@@ -32,9 +33,9 @@ function App() {
   useEffect(() => {
 
     // Armazena o valor atualizado de 'ToDo' no localStorage,
-    localStorage.setItem("ITEMS", JSON.stringify(ToDo))
+    localStorage.setItem("ITEMS", JSON.stringify(toDo))
     
-  }, [ToDo]) // O array de dependências [ToDo] indica que este efeito só deve ser executado *QUANDO* o estado 'ToDo' for modificado.
+  }, [toDo]) // O array de dependências [ToDo] indica que este efeito só deve ser executado *QUANDO* o estado 'ToDo' for modificado.
   
   function addToDo(title) {
 
@@ -50,9 +51,31 @@ function App() {
     
   }
 
+  function upDateToDo(id, completed, title) {
+    setToDo(currentToDo =>
+      currentToDo.map(toDo => {
+        if (toDo.id === id) {  // Certifique-se de que a comparação está correta
+          return { ...toDo, completed, title };  // Atualiza o estado de "completed"
+        }
+        return toDo;
+      })
+    );
+  }
+  
+
+  function DeleteToDo(id) {
+    setToDo(currentToDo => {
+      return currentToDo.filter(toDo => toDo.id !== id)
+    })
+  }
+
+
   return (
     <>
       <ToDoForms onSubmit={addToDo}/>
+      <h1>Tasks:</h1>
+
+      <ToDoList toDo={toDo} upDateToDo={upDateToDo} DeleteToDo={DeleteToDo}/>
     </>
   )
 }
