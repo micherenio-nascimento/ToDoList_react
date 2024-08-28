@@ -19,21 +19,22 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
     return (
        <li>
             <label>
-            <input 
-                type="checkbox" 
-                checked={completed}
-                onChange={e => upDateToDo(id, e.target.checked)}
-            />
-            {isEditing ? (
-                    <input
-                        type="text"
-                        value={newTitle}
-                        onChange={e => setNewTitle(e.target.value)}
-                    />
-                ) : (
-                    title
-                )}
-                {title}
+
+                <input 
+                    type="checkbox" 
+                    checked={completed}
+                    onChange={e => upDateToDo(id, e.target.checked)}
+                />
+
+                {isEditing ? (
+                        <input
+                            type="text"
+                            value={newTitle}
+                            onChange={e => setNewTitle(e.target.value)}
+                        />
+                    ) : (
+                        title
+                    )}
             </label>
             <button onClick={handleEditClick}>
                 {isEditing ? 'Save' : 'Edit'}

@@ -33,6 +33,7 @@ function App() {
   useEffect(() => {
 
     // Armazena o valor atualizado de 'ToDo' no localStorage,
+    console.log("Salvndo no localStorage: ", toDo)
     localStorage.setItem("ITEMS", JSON.stringify(toDo))
     
   }, [toDo]) // O array de dependências [ToDo] indica que este efeito só deve ser executado *QUANDO* o estado 'ToDo' for modificado.
@@ -41,6 +42,10 @@ function App() {
 
     // Atualiza o estado 'ToDo' usando a função 'setToDo'.
     setToDo(currentToDo => {
+
+      const taskExists = currentToDo.some(toDo => toDo.title === title);
+      if(taskExists) return currentToDo;
+
       return [
         ...currentToDo, // Retorna um novo array que inclui todas as tarefas existentes
 
