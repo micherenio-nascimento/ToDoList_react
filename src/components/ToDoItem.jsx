@@ -23,7 +23,7 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
                 <input 
                     type="checkbox" 
                     checked={completed}
-                    onChange={e => upDateToDo(id, e.target.checked)}
+                    onChange={e => upDateToDo(id, e.target.checked, title)}
                 />
 
                 {isEditing ? (
