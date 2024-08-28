@@ -57,11 +57,20 @@ function App() {
   }
 
   function upDateToDo(id, completed, title) {
+    
+    // Atualiza o estado 'toDo' com base na função de callback passada para 'setToDo'.
     setToDo(currentToDo =>
+
+      // Mapeia a lista de tarefas atual para criar uma nova lista atualizada.
       currentToDo.map(toDo => {
-        if (toDo.id === id) {  // Certifique-se de que a comparação está correta
-          return { ...toDo, completed, title };  // Atualiza o estado de "completed"
+
+        // Verifica se o ID da tarefa atual corresponde ao ID da tarefa a ser atualizada.
+        if (toDo.id === id) {  
+          
+          // Retorna uma nova tarefa com os valores atualizados para 'completed' e 'title'.
+          return { ...toDo, completed, title };  
         }
+        // Se o ID não corresponder, retorna a tarefa atual sem alterações.
         return toDo;
       })
     );
@@ -69,9 +78,13 @@ function App() {
   
 
   function DeleteToDo(id) {
+
+    // Atualiza o estado 'toDo' com base na função de callback passada para 'setToDo'.
     setToDo(currentToDo => {
-      return currentToDo.filter(toDo => toDo.id !== id)
-    })
+      
+      // Filtra a lista de tarefas atual para remover a tarefa com o ID fornecido.
+      return currentToDo.filter(toDo => toDo.id !== id);
+    });
   }
 
 
