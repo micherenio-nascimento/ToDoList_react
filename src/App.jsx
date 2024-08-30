@@ -100,8 +100,8 @@ function App() {
 
       <div className='flex'>
 
-        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-[100px]'>Tarefas criadas</h1>
-        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas</h1>
+        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-[100px]'>Tarefas criadas {toDo.length}</h1>
+        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas {}</h1>
 
       </div>
 
