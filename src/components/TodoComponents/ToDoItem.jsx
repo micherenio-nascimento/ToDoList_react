@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdDataSaverOn } from "react-icons/md";
+import './styleCheckbox.css'
 
 
 import './styleCheckbox.css'
@@ -35,7 +36,7 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
             />
 
                 
-                <label class="ml-5">
+                <label class={`ml-5 ${completed ? 'completed' : '' }`}>
                     {isEditing ? (
                         <input
                             class="form-input rounded-full text-[#fff] bg-[#262626] border-2 border-gray-50]"
