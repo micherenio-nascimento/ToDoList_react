@@ -8,11 +8,12 @@ import NavBar from './components/Templates/NavBar'
 
 function App() {
 
+  
   const [toDo, setToDo] = useState(() => {
 
     // Verifica o valor armazenado no localStorage sob a chave "ITEMS".
     const localValue = localStorage.getItem("ITEMS")
-
+    
     // Se localValue não for uma string válida para JSON, retorna um array vazio.
     if(localValue == null || localValue === ""){
       return [];
@@ -33,11 +34,16 @@ function App() {
 
   })
   
-  useEffect(() => {
+  const [completedCount, setCompletedCount] = useState(0);
 
+  useEffect(() => {
+    
     // Armazena o valor atualizado de 'ToDo' no localStorage,
     console.log("Salvndo no localStorage: ", toDo)
     localStorage.setItem("ITEMS", JSON.stringify(toDo))
+
+    const count = toDo.filter(task => task.completed).length;
+    setCompletedCount(count)
     
   }, [toDo]) // O array de dependências [ToDo] indica que este efeito só deve ser executado *QUANDO* o estado 'ToDo' for modificado.
   
@@ -101,7 +107,7 @@ function App() {
       <div className='flex'>
 
         <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-[100px]'>Tarefas criadas {toDo.length}</h1>
-        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas {}</h1>
+        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas {completedCount}/{toDo.length}</h1>
 
       </div>
 
