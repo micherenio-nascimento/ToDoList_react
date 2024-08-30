@@ -10,7 +10,7 @@ const Navbar = () => {
     } 
 
     return (
-        <div className=' flex text-center items-center h-24 max-w-[1240px] mx-auto px-4 bg-[#0AB6AB]'>
+        <div className=' flex text-center items-center h-24 max-w mx-auto px-4 bg-[#0AB6AB]'>
             <h1 className='w-full text-3xl items-center font-bold  text-black'>ToDo List.</h1>
             
             <div onClick={handleNav} className='block md:hidden'>

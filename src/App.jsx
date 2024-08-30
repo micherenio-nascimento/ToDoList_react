@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
-import ToDoForms from './components/ToDoForms'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import ToDoList from './components/ToDoList'
+
+import ToDoForms from './components/TodoComponents/ToDoForms'
+import ToDoList from './components/TodoComponents/ToDoList'
+import NavBar from './components/Templates/NavBar'
+
 
 function App() {
 
@@ -90,10 +93,20 @@ function App() {
 
   return (
     <>
-      <ToDoForms onSubmit={addToDo}/>
-      <h1>Tasks:</h1>
+    <div className="bg-[#0D0D0D]">
+
+      <NavBar/>
+      <ToDoForms onSubmit={addToDo} className="items-center"/>
+
+      <div className='flex'>
+
+        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-[100px]'>Tarefas criadas</h1>
+        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas</h1>
+
+      </div>
 
       <ToDoList toDo={toDo} upDateToDo={upDateToDo} DeleteToDo={DeleteToDo}/>
+    </div>
     </>
   )
 }
