@@ -1,4 +1,9 @@
 import React,{ useState } from "react";
+import { FaRegEdit } from "react-icons/fa";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { MdDataSaverOn } from "react-icons/md";
+
+
 import './styleCheckbox.css'
 
 const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
@@ -48,12 +53,12 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
                 <button 
                     class="mr-3"
                     onClick={handleEditClick}>
-                    {isEditing ? 'Save': 'Edit'}
+                    {isEditing ? <MdDataSaverOn className="mr-1" />:<FaRegEdit className="mr-1"/>}
                 </button>
                 <button 
                     class="mr-1"
                     onClick={() => DeleteToDo(id)}>
-                    Delete
+                    <RiDeleteBin6Line />
                 </button>
             </div>
 

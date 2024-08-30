@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {IoIosAdd} from "react-icons/io"
 
 const ToDoForms = ({onSubmit}) => {
 
@@ -29,7 +30,10 @@ const ToDoForms = ({onSubmit}) => {
                         id="item"                    
                     />
                 </div>
-                <button class="bg-[#1E6F9F] rounded w-20 h-8">Criar (+) </button>
+                <button class="bg-[#1E6F9F] rounded w-20 h-8 flex items-center justify-center">
+                    Criar <IoIosAdd />
+                 </button>
+                
 
             </form>
         </>
