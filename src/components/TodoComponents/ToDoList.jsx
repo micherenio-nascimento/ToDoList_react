@@ -1,9 +1,10 @@
+
 import ToDoItem from './ToDoItem';
 
 const ToDoList = ({toDo, upDateToDo, DeleteToDo}) => {
     return (
         <ul>
-            {toDo.length === 0 && "Sem tasks no momento"}
+            {toDo.length === 0}
             {toDo.map(toDo => {
                 return (
                     <ToDoItem
