@@ -104,10 +104,16 @@ function App() {
       <NavBar/>
       <ToDoForms onSubmit={addToDo} className="items-center"/>
 
-      <div className='flex'>
+      <div className='flex text-center items-center mx-auto mr-[10px]'>
 
-        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-[100px]'>Tarefas criadas {toDo.length}</h1>
-        <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto'>Concluídas {completedCount}/{toDo.length}</h1>
+        <div className='flex text-center items-center mx-auto mr-[10px]'>
+          <h1 className='text-[#4EA8DE] mr-2'>Tarefas criadas </h1>
+          <div className="text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl"> {toDo.length}</div>
+        </div>
+        <div className='flex text-center items-center mx-auto'>
+          <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-2'>Concluídas</h1>
+          <div className='text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl'>{completedCount}/{toDo.length}</div>
+        </div>
 
       </div>
 
