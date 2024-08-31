@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {IoIosAdd} from "react-icons/io"
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const ToDoForms = ({onSubmit}) => {
 
@@ -30,8 +30,8 @@ const ToDoForms = ({onSubmit}) => {
                         id="item"                    
                     />
                 </div>
-                <button class="bg-[#1E6F9F] rounded w-20 h-8 flex items-center justify-center">
-                    Criar <IoIosAdd />
+                <button class="bg-[#1E6F9F] rounded w-20 h-8 flex items-center justify-center h-11 ">
+                    <p className="mr-1">Criar</p> <IoIosAddCircleOutline />
                  </button>
                 
 
