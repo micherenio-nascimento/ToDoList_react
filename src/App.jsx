@@ -98,29 +98,28 @@ function App() {
 
 
   return (
-    <>
-    <div className="bg-[#0D0D0D]">
+    <div className="bg-[#0D0D0D] min-h-screen px-4 sm:px-6 lg:px-8">
+      <NavBar />
+      <ToDoForms onSubmit={addToDo} className="my-4" />
 
-      <NavBar/>
-      <ToDoForms onSubmit={addToDo} className="items-center"/>
-
-      <div className='flex text-center items-center mx-auto mr-[10px]'>
-
-        <div className='flex text-center items-center mx-auto mr-[10px]'>
-          <h1 className='text-[#4EA8DE] mr-2'>Tarefas criadas </h1>
-          <div className="text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl"> {toDo.length}</div>
+      <div className="flex flex-col sm:flex-row justify-between items-center text-center mx-auto mb-4">
+        <div className="flex items-center mb-2 sm:mb-0">
+          <h1 className="text-[#4EA8DE] mr-2">Tarefas criadas</h1>
+          <div className="text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl flex items-center justify-center">
+            {toDo.length}
+          </div>
         </div>
-        <div className='flex text-center items-center mx-auto'>
-          <h1 className='flex text-center text-[#4EA8DE] items-center mx-auto mr-2'>Concluídas</h1>
-          <div className='text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl'>{completedCount}/{toDo.length}</div>
+        <div className="flex items-center">
+          <h1 className="text-[#4EA8DE] mr-2">Concluídas</h1>
+          <div className="text-[#D9D9D9] bg-[#333333] w-10 rounded-2xl flex items-center justify-center">
+            {completedCount}/{toDo.length}
+          </div>
         </div>
-
       </div>
 
-      <ToDoList toDo={toDo} upDateToDo={upDateToDo} DeleteToDo={DeleteToDo}/>
+      <ToDoList toDo={toDo} upDateToDo={upDateToDo} DeleteToDo={DeleteToDo} />
     </div>
-    </>
-  )
+  );
 }
 
 export default App

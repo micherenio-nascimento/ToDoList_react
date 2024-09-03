@@ -25,45 +25,35 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
     
     return (
 
-        <li class="flex items-center w-6/12 justify-between mx-auto px-4 text-white bg-[#262626] border border-[#333333] m-3 h-14 rounded-md shadow-2xl">
+        <li className="flex flex-col sm:flex-row justify-between items-center w-full bg-[#262626] border border-[#333333] rounded-md px-4 py-2 my-2">
+  <div className="flex items-center w-full sm:w-auto">
+    <input
+      className="custom-checkbox mr-4"
+      type="checkbox"
+      checked={completed}
+      onChange={e => upDateToDo(id, e.target.checked, title)}
+    />
+    {isEditing ? (
+      <input
+        className="form-input rounded-full bg-[#262626] border-2 border-gray-50 text-white w-full sm:w-auto"
+        type="text"
+        value={newTitle}
+        onChange={e => setNewTitle(e.target.value)}
+      />
+    ) : (
+      <label className={`flex-grow ${completed ? "completed" : ""}`}>{title}</label>
+    )}
+  </div>
+  <div className="flex mt-2 sm:mt-0">
+    <button className="mr-2" onClick={handleEditClick}>
+      {isEditing ? <MdDataSaverOn /> : <FaRegEdit />}
+    </button>
+    <button onClick={() => DeleteToDo(id)}>
+      <RiDeleteBin6Line />
+    </button>
+  </div>
+</li>
 
-            <div class="flex items-center">
-            <input 
-                class="custom-checkbox ml-1"
-                type="checkbox" 
-                checked={completed}
-                onChange={e => upDateToDo(id, e.target.checked, title)}
-            />
-
-                
-                <label class={`ml-5 ${completed ? 'completed' : '' }`}>
-                    {isEditing ? (
-                        <input
-                            class="form-input rounded-full text-[#fff] bg-[#262626] border-2 border-gray-50]"
-                            type="text"
-                            value={newTitle}
-                            onChange={e => setNewTitle(e.target.value)}
-                        />
-                    ) : (
-                        title
-                    )}
-                </label>
-            </div>
-        
-            <div class="flex items-center">
-                <button 
-                    class="mr-3"
-                    onClick={handleEditClick}>
-                    {isEditing ? <MdDataSaverOn className="mr-1" />:<FaRegEdit className="mr-1"/>}
-                </button>
-                <button 
-                    class="mr-1"
-                    onClick={() => DeleteToDo(id)}>
-                    <RiDeleteBin6Line />
-                </button>
-            </div>
-
-        </li>
     
     );
 };
