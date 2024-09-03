@@ -25,7 +25,7 @@ const ToDoItem = ({completed, id, title, upDateToDo, DeleteToDo}) => {
     
     return (
 
-        <li className="flex flex-col sm:flex-row justify-between items-center w-full bg-[#262626] border border-[#333333] rounded-md px-4 py-2 my-2">
+        <li className="flex flex-col sm:flex-row justify-between items-center w-full bg-[#262626] border border-[#333333] rounded-md px-4 py-2 my-2 text-white">
   <div className="flex items-center w-full sm:w-auto">
     <input
       className="custom-checkbox mr-4"
