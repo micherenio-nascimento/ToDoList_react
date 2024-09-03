@@ -122,3 +122,7 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, abra um
 - Commit suas alterações (`git commit -m 'Adicionei uma nova feature'`)
 - Envie para o repositório (`git push origin feature/sua-feature`)
 - Abra um Pull Request
+
+
+## Categoria
+**frontend**
