@@ -1,5 +1,7 @@
 # ToDo List React App
 
+![Demonstração](./src/assets/Demonstracao.gif)
+
 Este é um projeto simples de aplicação ToDo List construída com React, Vite, e TailwindCSS. O objetivo deste projeto é oferecer uma interface intuitiva para criar, editar, e gerenciar uma lista de tarefas.
 
 ## Índice
