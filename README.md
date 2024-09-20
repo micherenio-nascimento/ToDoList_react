@@ -44,7 +44,7 @@ Para instalar e rodar este projeto localmente, siga os passos abaixo:
 - **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/todolist-react.git
+   git clone https://github.com/micherenio-nascimento/ToDoList_react.git
    ```
 
 - **Navegue até o diretório do projeto:**
